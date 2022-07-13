@@ -1,0 +1,58 @@
+{% extends 'crud/base.html' %}
+
+{% load static %}
+
+{% block title %}Product New{% endblock %}
+
+{% block main_content %}
+{% include 'crud/navbar.html' %}
+
+<div class="container mt-2 mb-2 py-5 bg-dark text-white text-center rounded">
+    <h1>Formulario registro nuevos productos</h1>    
+</div>
+<div class="container mt-4 mb-4">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="idProducto" class="fw-bold">Código Producto</label>
+            <div class="input-group">
+                {{form.idProducto}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="descripcion" class="fw-bold">Descripción</label>
+            <div class="input-group">
+                {{form.descripcion}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="precio" class="fw-bold">Precio Unitario</label>
+            <div class="input-group">
+                {{form.precio}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="stock" class="fw-bold">Stock</label>
+            <div class="input-group">
+                {{form.stock}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="marca" class="fw-bold">Marca</label>
+            <div class="input-group">
+                {{form.marca}}
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            <label for="imagen" class="fw-bold">Imagen</label>
+            <div class="input-group">
+                {{form.imagen}}
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <input type="submit" class="btn btn-outline-primary" id="registrar" value="Registrar">
+            <input type="reset" class="btn btn-outline-success" id="limpiar" value="Limpiar">
+        </div>
+    </form>
+</div>
+{% endblock %}
